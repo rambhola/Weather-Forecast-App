@@ -90,151 +90,153 @@ class _WeatherAppState extends State<WeatherApp> {
           ? const Center(child: CircularProgressIndicator())
           : Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Center(
-              child: Text(
-                weatherData?['location']?['name'] ?? "Unknown Location",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                ),
-              ),
-            ),
-            Center(
-              child: Text(
-                currentDateTime,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 22,
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 80, left: 41, right: 10),
-                  child: Lottie.asset(
-                    'assets/animation/Animation - 1736767167371.json',
-                    fit: BoxFit.cover,
-                    width: 125,
-                    height: 150,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Center(
+                child: Text(
+                  weatherData?['location']?['name'] ?? "Unknown Location",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
                   ),
                 ),
-                Lottie.asset(
-                  'assets/animation/Animation - 1736767167371.json',
-                  fit: BoxFit.cover,
-                  width: 95,
-                  height: 130,
-                  animate: true,
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Center(
-              child: Text(
-                "${weatherData?['current']?['temp_c']}°C",
-                style: const TextStyle(
-                  fontSize: 47,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.white,
+              ),
+              Center(
+                child: Text(
+                  currentDateTime,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                  ),
                 ),
               ),
-            ),
-            Center(
-              child: Text(
-                weatherData?['current']?['is_day'] == 0
-                    ? "GOOD NIGHT"
-                    : "GOOD MORNING",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold,
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 80, left: 41, right: 10),
+                    child: Lottie.asset(
+                      'assets/animation/Animation - 1736767167371.json',
+                      fit: BoxFit.cover,
+                      width: 125,
+                      height: 150,
+                    ),
+                  ),
+                  Lottie.asset(
+                    'assets/animation/Animation - 1736767167371.json',
+                    fit: BoxFit.cover,
+                    width: 95,
+                    height: 130,
+                    animate: true,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: Text(
+                  "${weatherData?['current']?['temp_c']}°C",
+                  style: const TextStyle(
+                    fontSize: 47,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            const Center(
-              child: Text(
-                "WASIM",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold,
+              Center(
+                child: Text(
+                  weatherData?['current']?['is_day'] == 0
+                      ? "GOOD NIGHT"
+                      : "GOOD MORNING",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            const Divider(
-              color: Colors.white,
-              thickness: 2,
-              indent: 150,
-              endIndent: 150,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    Lottie.asset(
-                      'assets/animation/Sunset Animation.json',
-                      width: 60,
-                      height: 60,
-                    ),
-                    Text(
-                      currentTime,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                      ),
-                    ),
-                    const Text(
-                      "SUNSET",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+              const SizedBox(height: 20),
+              const Center(
+                child: Text(
+                  "WASIM",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                Column(
-                  children: [
-                    Lottie.asset(
-                      'assets/animation/wind_tharamometer.json',
-                      width: 60,
-                      height: 60,
-                    ),
-                    Text(
-                      "${weatherData?['current']?['wind_mph']} mph",
-                      style: const TextStyle(
-                        fontSize: 22,
-                        color: Colors.white,
+              ),
+              const SizedBox(height: 20),
+              const Divider(
+                color: Colors.white,
+                thickness: 2,
+                indent: 150,
+                endIndent: 150,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: [
+                      Lottie.asset(
+                        'assets/animation/Sunset Animation.json',
+                        width: 60,
+                        height: 60,
                       ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Lottie.asset(
-                      'assets/animation/Celsius.json',
-                      width: 60,
-                      height: 60,
-                    ),
-                    Text(
-                      "${weatherData?['current']?['temp_c']}°C",
-                      style: const TextStyle(
-                        fontSize: 22,
-                        color: Colors.white,
+                      Text(
+                        currentTime,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
+                      const Text(
+                        "SUNSET",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Lottie.asset(
+                        'assets/animation/wind_tharamometer.json',
+                        width: 60,
+                        height: 60,
+                      ),
+                      Text(
+                        "${weatherData?['current']?['wind_mph']} mph",
+                        style: const TextStyle(
+                          fontSize: 22,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Lottie.asset(
+                        'assets/animation/Celsius.json',
+                        width: 60,
+                        height: 60,
+                      ),
+                      Text(
+                        "${weatherData?['current']?['temp_c']}°C",
+                        style: const TextStyle(
+                          fontSize: 22,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
