@@ -6,6 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
+import 'package:weather_app/Screen/setting_page.dart';
 
 class WeatherApp extends StatefulWidget {
   static String routName = "weather app";
@@ -83,9 +84,25 @@ class _WeatherAppState extends State<WeatherApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        //backgroundColor: Colors.black,
+        actions: [
+          PopupMenuButton(itemBuilder: (_){
+            return [
+              PopupMenuItem(child: Row(
+                children: [
+                  Icon(Icons.settings),
+                 SizedBox(width: 11,),
+                 Text("Setting"),
+                ],
+              ),onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> SettingPages()));
+              },)
+            ];
+
+          })
+        ],
       ),
-       backgroundColor: Colors.black,
+       //backgroundColor: Colors.black,
       body: weatherData == null
           ? const Center(child: CircularProgressIndicator())
           : Padding(
