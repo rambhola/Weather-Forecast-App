@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # weather_app
 
 A new Flutter project.
@@ -15,10 +14,3 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-=======
-#Project 2 : Weather Forecast App
-#Description : This real-time weather app leverages advanced technology to provide accurate forecasts, including wind updates and current weather conditions for locations worldwide.
-#Technologies Used : Dart, Flutter,Advanced Weather APIs
-#IDE Used : Android Studio
-#Duration : 5 Days
->>>>>>> 289e930851e694b03bc3fca311a14df766810f1c
